@@ -1,13 +1,28 @@
-const positionLat = 2; // x
-const positionLong = 5; // y
+const language = prompt("Languаge: ru / en / de / it / es / fr ?");
+let greetings;
 
-const adressLat = 8;
-const adressLong = 13;
+switch (language) {
+  case "ru":
+    greetings = "Добрый день!";
+    break;
+  case "en":
+    greetings = "Good afternoon!";
+    break;
+  case "de":
+    greetings = "Guten Tag!";
+    break;
+  case "it":
+    greetings = "Buongiorno!";
+    break;
+  case "es":
+    greetings = "¡Buenos días!";
+    break;
+  case "fr":
+    greetings = "Bonjour!";
+    break;
+  default:
+    greetings = "Sul Sul!";
+    break;
+}
 
-const width = adressLat - positionLat; // 6
-console.log(width);
-const height = adressLong - positionLong; // 8
-console.log(height);
-
-const distance = Math.sqrt(width ** 2 + height ** 2);
-console.log(distance);
+console.log(greetings);
