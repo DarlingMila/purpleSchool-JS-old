@@ -1,13 +1,14 @@
-const positionLat = 2; // x
-const positionLong = 5; // y
+function convertToSearchString(queryObj) {
+  let string = "";
+  for (const key in queryObj) {
+    string += `${key}=${queryObj[key]}&`;
+  }
+  return string.slice(0, -1);
+}
 
-const adressLat = 8;
-const adressLong = 13;
+const obj = {
+  search: "Вася",
+  take: 10,
+};
 
-const width = adressLat - positionLat; // 6
-console.log(width);
-const height = adressLong - positionLong; // 8
-console.log(height);
-
-const distance = Math.sqrt(width ** 2 + height ** 2);
-console.log(distance);
+console.log(convertToSearchString(obj));
